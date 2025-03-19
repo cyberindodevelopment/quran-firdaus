@@ -1,4 +1,4 @@
-<h1 align="center">Maos Quran</h1>
+<h1 align="center">Quran Firdaus</h1>
 
 Al-Qur'an online berbasis web yang dilengkapi dengan terjemahan, tafsir, dan audio ayat.
 
@@ -6,21 +6,6 @@ Al-Qur'an online berbasis web yang dilengkapi dengan terjemahan, tafsir, dan aud
 
 [https://maos-quran.vercel.app/](https://maos-quran.vercel.app/)
 
-## Screenshoot
-
-<div align="middle">
-    <span>
-    <h3>Light</h3>
-    <img src="https://i.ibb.co/6mtV9nH/mobile-light.png" alt="Light Mode" width="300" />
-</span>
-
-<br>
-
-<span>
-    <h3>Dark</h3>
-    <img src="https://i.ibb.co/0FZ4pt2/mobile-dark.png" alt="Dark Mode" width="300" />
-</span>
-</div>
 
 ## Fitur
 
