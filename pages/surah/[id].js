@@ -1,6 +1,6 @@
-import Head from "next/head";
-import { useState } from "react";
-import NextLink from "next/link";
+import Head from 'next/head';
+import { useState } from 'react';
+import NextLink from 'next/link';
 import {
   Box,
   Text,
@@ -14,18 +14,18 @@ import {
   useColorMode,
   VStack,
   StackDivider,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   IoPlayOutline,
   IoPauseOutline,
   IoBookmarkOutline,
   IoChevronBack,
   IoChevronForward,
-} from "react-icons/io5";
-import { useLastReadStore } from "stores/LastRead";
-import { usePreferenceStore } from "stores/Preference";
-import PageHeader from "@/components/PageHeader";
-import BackToTop from "@/components/BackToTop";
+} from 'react-icons/io5';
+import { useLastReadStore } from 'stores/LastRead';
+import { usePreferenceStore } from 'stores/Preference';
+import PageHeader from '@/components/PageHeader';
+import BackToTop from '@/components/BackToTop';
 
 function Surah({ surah, prevSurah, nextSurah }) {
   const [playing, setPlaying] = useState(false);
@@ -36,7 +36,7 @@ function Surah({ surah, prevSurah, nextSurah }) {
   const { verses } = surah;
 
   const togglePlay = (audioId) => {
-    const audios = document.querySelectorAll("audio");
+    const audios = document.querySelectorAll('audio');
     audios.forEach((audio) => {
       if (audio.id === audioId) {
         if (audio.paused) {
@@ -62,8 +62,8 @@ function Surah({ surah, prevSurah, nextSurah }) {
     if (!toast.isActive(toastId)) {
       toast({
         description: `QS. ${surah.name.transliteration.id}: ${verse} telah ditambahkan ke terakhir dibaca.`,
-        position: "top-right",
-        status: "success",
+        position: 'top-right',
+        status: 'success',
         isClosable: true,
         id: toastId,
       });
@@ -84,7 +84,7 @@ function Surah({ surah, prevSurah, nextSurah }) {
       <Box as="main" px="15px">
         <Flex
           py="30px"
-          bgGradient="linear(to-r, #DF98FA 0%, #9055FF 100%)"
+          bgGradient="linear(to-r, #1A2980, #26D0CE)"
           mt="15px"
           borderRadius="8px"
           display="flex"
@@ -116,7 +116,7 @@ function Surah({ surah, prevSurah, nextSurah }) {
         <VStack
           divider={
             <StackDivider
-              borderColor={colorMode === "dark" ? "gray.500" : "gray.200"}
+              borderColor={colorMode === 'dark' ? 'gray.500' : 'gray.200'}
             />
           }
           spacing={10}
@@ -128,9 +128,9 @@ function Surah({ surah, prevSurah, nextSurah }) {
               <Flex
                 minH="47px"
                 bg={
-                  colorMode === "dark"
-                    ? "rgba(134, 62, 213, 0.1)"
-                    : "rgba(134, 62, 213, 0.05)"
+                  colorMode === 'dark'
+                    ? 'rgba(134, 62, 213, 0.1)'
+                    : 'rgba(134, 62, 213, 0.05)'
                 }
                 borderRadius="10px"
                 py="10px"
@@ -186,14 +186,14 @@ function Surah({ surah, prevSurah, nextSurah }) {
                   fontFamily="Amiri, serif"
                   dir="rtl"
                   fontSize="3xl"
-                  color={colorMode === "dark" ? "gray.100" : "gray.700"}
+                  color={colorMode === 'dark' ? 'gray.100' : 'gray.700'}
                   lineHeight="70px"
                 >
                   {verse.text.arab}
                 </Text>
                 <Text
                   mt="35px"
-                  color={colorMode === "dark" ? "gray.100" : "#240F4F"}
+                  color={colorMode === 'dark' ? 'gray.100' : '#240F4F'}
                   fontSize="18px"
                   fontWeight="500"
                 >
@@ -204,13 +204,13 @@ function Surah({ surah, prevSurah, nextSurah }) {
                     <Text
                       mt="20px"
                       mb="5px"
-                      color={colorMode === "dark" ? "gray.100" : "#240F4F"}
+                      color={colorMode === 'dark' ? 'gray.100' : '#240F4F'}
                       fontWeight="500"
                     >
                       Terjemah:
                     </Text>
                     <Text
-                      color={colorMode === "dark" ? "gray.200" : "#240F4F"}
+                      color={colorMode === 'dark' ? 'gray.200' : '#240F4F'}
                       fontSize="sm"
                       fontStyle="italic"
                     >
@@ -224,13 +224,13 @@ function Surah({ surah, prevSurah, nextSurah }) {
                     <Text
                       mt="20px"
                       mb="5px"
-                      color={colorMode === "dark" ? "gray.100" : "#240F4F"}
+                      color={colorMode === 'dark' ? 'gray.100' : '#240F4F'}
                       fontWeight="500"
                     >
                       Tafsir:
                     </Text>
                     <Text
-                      color={colorMode === "dark" ? "gray.200" : "#240F4F"}
+                      color={colorMode === 'dark' ? 'gray.200' : '#240F4F'}
                       fontSize="sm"
                     >
                       {verse.tafsir.id.short}
@@ -254,7 +254,7 @@ function Surah({ surah, prevSurah, nextSurah }) {
       >
         <Flex
           h="100%"
-          bg={colorMode === "dark" ? "#863ED5" : "white"}
+          bg={colorMode === 'dark' ? '#863ED5' : 'white'}
           borderRadius="40px"
           shadow="lg"
           py="10px"
@@ -268,22 +268,22 @@ function Surah({ surah, prevSurah, nextSurah }) {
               alignItems="center"
               px="15px"
               pointerEvents={
-                prevSurah.hasOwnProperty("number") ? "auto" : "none"
+                prevSurah.hasOwnProperty('number') ? 'auto' : 'none'
               }
               cursor={
-                prevSurah.hasOwnProperty("number") ? "pointer" : "not-allowed"
+                prevSurah.hasOwnProperty('number') ? 'pointer' : 'not-allowed'
               }
-              color={colorMode === "dark" ? "white" : "#863ED5"}
+              color={colorMode === 'dark' ? 'white' : '#1A2980'}
               fontSize="sm"
               fontWeight="500"
-              opacity={prevSurah.hasOwnProperty("number") ? 1 : 0.5}
-              _focus={{ outline: "none" }}
+              opacity={prevSurah.hasOwnProperty('number') ? 1 : 0.5}
+              _focus={{ outline: 'none' }}
             >
               <IoChevronBack size={18} />
               <Text flex={1} display="flex" justifyContent="center">
-                {prevSurah.hasOwnProperty("number")
+                {prevSurah.hasOwnProperty('number')
                   ? prevSurah.name.transliteration.id
-                  : ""}
+                  : ''}
               </Text>
             </Link>
           </NextLink>
@@ -297,21 +297,21 @@ function Surah({ surah, prevSurah, nextSurah }) {
               alignItems="center"
               px="15px"
               pointerEvents={
-                nextSurah.hasOwnProperty("number") ? "auto" : "none"
+                nextSurah.hasOwnProperty('number') ? 'auto' : 'none'
               }
               cursor={
-                nextSurah.hasOwnProperty("number") ? "pointer" : "not-allowed"
+                nextSurah.hasOwnProperty('number') ? 'pointer' : 'not-allowed'
               }
-              color={colorMode === "dark" ? "white" : "#863ED5"}
+              color={colorMode === 'dark' ? 'white' : '#1A2980'}
               fontSize="sm"
               fontWeight="500"
-              opacity={nextSurah.hasOwnProperty("number") ? 1 : 0.5}
-              _focus={{ outline: "none" }}
+              opacity={nextSurah.hasOwnProperty('number') ? 1 : 0.5}
+              _focus={{ outline: 'none' }}
             >
               <Text flex={1} display="flex" justifyContent="center">
-                {nextSurah.hasOwnProperty("number")
+                {nextSurah.hasOwnProperty('number')
                   ? nextSurah.name.transliteration.id
-                  : ""}
+                  : ''}
               </Text>
               <IoChevronForward size={18} />
             </Link>
@@ -327,15 +327,25 @@ function Surah({ surah, prevSurah, nextSurah }) {
 export default Surah;
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://api.quran.sutanlab.id/surah/`);
-  const resultJson = await response.json();
-  const surahList = resultJson.data;
+  try {
+    const response = await fetch(`https://api.quran.gading.dev/surah/`);
 
-  const paths = surahList.map((surah) => ({
-    params: { id: surah.number.toString() },
-  }));
+    if (!response.ok) {
+      throw new Error(`Failed to fetch: ${response.statusText}`);
+    }
 
-  return { paths, fallback: false };
+    const resultJson = await response.json();
+    const surahList = resultJson.data || [];
+
+    const paths = surahList.map((surah) => ({
+      params: { id: surah.number.toString() },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.error('Error fetching surah list:', error);
+    return { paths: [], fallback: false }; // Hindari crash saat build
+  }
 }
 
 export async function getStaticProps({ params }) {
@@ -348,9 +358,9 @@ export async function getStaticProps({ params }) {
   };
 
   const results = await Promise.all([
-    fetchData(`https://api.quran.sutanlab.id/surah/${id}`),
-    fetchData(`https://api.quran.sutanlab.id/surah/${Number(id) - 1}`),
-    fetchData(`https://api.quran.sutanlab.id/surah/${Number(id) + 1}`),
+    fetchData(`https://api.quran.gading.dev/surah/${id}`),
+    fetchData(`https://api.quran.gading.dev/surah/${Number(id) - 1}`),
+    fetchData(`https://api.quran.gading.dev/surah/${Number(id) + 1}`),
   ]);
 
   const [surah, prevSurah, nextSurah] = results;
